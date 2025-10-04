@@ -30,3 +30,25 @@
  * - Verifique se cada termo é par usando (termo % 2 === 0)
  * - A função seja exportada com module.exports
  */
+
+
+function somaFibonacciPares(){
+    let soma = 0;
+    let numero = 0
+    let ultimoNumero = 2;
+
+    do{
+        numero = ((ultimoNumero - 1) + (ultimoNumero - 2));
+
+        if(numero % 2 === 0){
+            soma += numero;
+        }
+
+        ultimoNumero = numero;
+
+    }while(numero < 50.000);
+
+    return soma;
+}
+
+module.exports = somaFibonacciPares;
