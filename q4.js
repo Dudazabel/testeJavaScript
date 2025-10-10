@@ -33,22 +33,23 @@
 
 
 function somaFibonacciPares(){
+    let penultimoNumero = 0;
+    let ultimoNumero = 1;
     let soma = 0;
-    let numero = 0
-    let ultimoNumero = 2;
+    let proximo = 0;
 
-    do{
-        numero = ((ultimoNumero - 1) + (ultimoNumero - 2));
+    while(proximo < 50000){
+         proximo = penultimoNumero + ultimoNumero;
 
-        if(numero % 2 === 0){
-            soma += numero;
+        if(proximo % 2 === 0){
+            soma += proximo;
         }
 
-        ultimoNumero = numero;
+        penultimoNumero = ultimoNumero;
+        ultimoNumero = proximo;
+    }
 
-    }while(numero < 50.000);
-
-    return soma;
+    return soma;   
 }
 
 module.exports = somaFibonacciPares;
